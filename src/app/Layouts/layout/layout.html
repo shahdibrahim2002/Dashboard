@@ -1,0 +1,42 @@
+<div class="container-fluid h-100 overflow-hidden">
+  <div class="row g-0 h-100 overflow-hidden">
+
+    <!-- Sidebar -->
+    <aside class="col-lg-2 d-none d-lg-block p-0 h-100 overflow-hidden">
+      <app-sidebar></app-sidebar>
+    </aside>
+
+    <!-- Main -->
+    <main class="col-lg-10 col-12 h-100 d-flex flex-column overflow-hidden">
+
+      <!-- Mobile Navbar -->
+      <nav class="navbar navbar-light bg-white d-lg-none border-bottom">
+        <div class="container-fluid">
+          <button class="btn btn-outline-secondary" type="button"
+            data-bs-toggle="collapse" data-bs-target="#mobileSidebar">
+            <i class="fa-solid fa-bars"></i>
+          </button>
+          <span class="fw-semibold gradient-text ms-2">Misk Integration</span>
+        </div>
+      </nav>
+
+      <!-- Mobile Sidebar -->
+      <div class="collapse d-lg-none" id="mobileSidebar">
+        <app-sidebar></app-sidebar>
+      </div>
+
+      <!-- Navbar -->
+      <app-navbar></app-navbar>
+
+      <!-- Content (NO SCROLL) -->
+      <div class="flex-grow-1 px-3 overflow-hidden">
+        <router-outlet></router-outlet>
+      </div>
+
+      <!-- Footer -->
+      <app-footer></app-footer>
+
+    </main>
+
+  </div>
+</div>

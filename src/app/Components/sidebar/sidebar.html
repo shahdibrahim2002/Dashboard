@@ -1,0 +1,91 @@
+<!-- Toggle Button for mobile -->
+<nav class="navbar navbar-light bg-white d-lg-none border-bottom">
+    <div class="container-fluid">
+        <button class="btn btn-outline-secondary" type="button" data-bs-toggle="collapse" data-bs-target="#sidebarMenu"
+            aria-controls="sidebarMenu" aria-expanded="false" aria-label="Toggle navigation">
+            <i class="fa-solid fa-bars"></i>
+        </button>
+        <span class="fw-semibold gradient-text ms-2">Misk Integration</span>
+    </div>
+</nav>
+
+<!-- Sidebar -->
+<nav id="sidebarMenu" class="collapse d-lg-block sidebar bg-white border">
+    <div class="position-sticky h-100">
+
+        <!-- Logo -->
+        <div class="px-3 py-3 d-flex align-items-center gap-2">
+            <img src="assets/images/image.jpeg" alt="Misk" height="28" />
+            <span class="fw-semibold gradient-text">Misk Integration</span>
+            <span class="status-indicator mx-1">
+                <span class="status-dot"></span>
+            </span>
+        </div>
+
+        <!-- Menu -->
+        <div class="list-group list-group-flush mx-3">
+
+            <a routerLink="dashboard" class="list-group-item list-group-item-action active">
+                <i class="fa-solid fa-gauge me-3"></i>
+                <span>Dashboard</span>
+            </a>
+
+            <div class="menu-section">Services</div>
+
+            <a routerLink="products" class="list-group-item list-group-item-action">
+                <i class="fa-solid fa-box me-3"></i>
+                <span>Products</span>
+            </a>
+
+            <a routerLink="domains" class="list-group-item list-group-item-action">
+                <i class="fa-solid fa-globe me-3"></i>
+                <span>Domains</span>
+            </a>
+
+            <a routerLink="invoices" class="list-group-item list-group-item-action">
+                <i class="fa-solid fa-file-invoice me-3"></i>
+                <span>Invoices</span>
+            </a>
+
+            <a routerLink="tickets" class="list-group-item list-group-item-action">
+                <i class="fa-solid fa-ticket me-3"></i>
+                <span>Tickets</span>
+            </a>
+
+            <a routerLink="solutions" class="list-group-item list-group-item-action">
+                <i class="fa-solid fa-layer-group me-3"></i>
+                <span>Solutions</span>
+            </a>
+
+            <div class="menu-section mt-3">Settings</div>
+
+            <a routerLink="PersonalData" class="list-group-item list-group-item-action">
+                <i class="fa-solid fa-user me-3"></i>
+                <span>Personal Data</span>
+            </a>
+
+            <a routerLink="ChangePassword" class="list-group-item list-group-item-action">
+                <i class="fa-solid fa-lock me-3"></i>
+                <span>Change Password</span>
+            </a>
+
+            <a routerLink="NotificationAlert" class="list-group-item list-group-item-action">
+                <i class="fa-solid fa-bell me-3"></i>
+                <span>Notification Alert</span>
+            </a>
+
+            <div class="menu-section mt-3">Other</div>
+
+            <a routerLink="Chat" class="list-group-item list-group-item-action">
+                <i class="fa-solid fa-comments me-3"></i>
+                <span>Chat</span>
+            </a>
+
+            <a routerLink="Calendar" class="list-group-item list-group-item-action">
+                <i class="fa-solid fa-calendar-days me-3"></i>
+                <span>Calendar</span>
+            </a>
+
+        </div>
+    </div>
+</nav>

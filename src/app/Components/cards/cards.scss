@@ -1,0 +1,83 @@
+.dashboard-card {
+  background: #fff;
+  border-radius: 5px;
+  border: 1px solid #eee;
+  padding: 18px;
+  height: 120px;
+  display: flex;
+  align-items: center;
+  direction: ltr;
+}
+
+.banner-card {
+  padding: 0;
+  overflow: hidden;
+}
+
+.banner-card img {
+  width: 100%;
+  height: 120px;
+  object-fit: cover;
+  border-radius: 12px;
+}
+
+.card-content {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.card-content h4 {
+  margin: 0;
+  font-size: 22px;
+  font-weight: 600;
+  color: #111827;
+}
+
+.card-content p {
+  margin: 4px 0 0;
+  font-size: 13px;
+  color: #6b7280;
+}
+
+.icon-circle {
+  width: 38px;
+  height: 38px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 16px;
+}
+
+/* Icon Colors */
+.orange { background: #fff4e6; color: #f97316; }
+.red    { background: #fee2e2; color: #ef4444; }
+.green  { background: #ecfdf5; color: #10b981; }
+.purple { background: #f3e8ff; color: #8b5cf6; }
+.blue   { background: #eff6ff; color: #3b82f6; }
+/* Service card */
+.service-card {
+  padding: 15px;
+  height: 100%; /* يجعل الكارد يتمدد حسب ارتفاع الكولوم */
+}
+
+
+.service-content {
+  margin-top: 15px;
+}
+
+.service-content h4 {
+  font-weight: 600;
+}
+
+.service-content p {
+  font-size: 14px;
+  color: #6c757d;
+}
+
+.service-content button {
+  background-color: #2f6f89;
+  border: none;
+}

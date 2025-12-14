@@ -1,0 +1,109 @@
+<!-- stats-table.component.html -->
+<div class="stats-table-container bg-white rounded-3 border border-light-subtle p-4 mt-4">
+    <div class="table-responsive">
+        <table class="table table-hover mb-4">
+            <thead class="bg-light">
+                <tr>
+                    <th class="text-muted fw-semibold text-uppercase fs-6">PRODUCT</th>
+                    <th class="text-muted fw-semibold text-uppercase fs-6">RENEWAL DATE</th>
+                    <th class="text-muted fw-semibold text-uppercase fs-6">PRICE</th>
+                    <th class="text-muted fw-semibold text-uppercase fs-6">STATUS</th>
+                    <th class="text-muted fw-semibold text-uppercase fs-6 text-center">ACTION</th>
+                </tr>
+            </thead>
+            <tbody>
+                @for (item of pagedItems; track item.productId) {
+                <tr class="border-bottom border-light-subtle align-middle">
+                    <td class="py-3">
+                        <div class="d-flex align-items-center gap-3">
+                            <div class="d-flex align-items-center justify-content-center rounded-2"
+                                style="width: 40px; height: 40px; background-color: #ffffff;">
+                                <i class="bi bi-server fs-5" style="color: #eff3fc;"></i>
+                            </div>
+                            <div>
+                                <div class="fw-medium text-dark">{{ item.productName }}</div>
+                                <div class="text-muted small">{{ item.productId }}</div>
+                            </div>
+                        </div>
+                    </td>
+                    <td class="py-3 text-secondary">{{ item.renewalDate | date:'dd-MM-yyyy' }}</td>
+                    <td class="py-3 fw-semibold text-dark">{{ item.price | currency:'USD':'symbol':'1.0-0' }}</td>
+                    <td class="py-3">
+                        @if (item.status === 'active') {
+                        <span class="badge rounded-pill px-3 py-2" style="background-color: #ecfdf5; color: #10b981;">
+                            {{ item.status }}
+                        </span>
+                        }
+                        @if (item.status === 'inactive') {
+                        <span class="badge rounded-pill px-3 py-2" style="background-color: #fee2e2; color: #ef4444;">
+                            {{ item.status }}
+                        </span>
+                        }
+                    </td>
+                    <td class="py-3 text-center">
+                        <div class="dropdown">
+                            <button class="btn btn-link text-dark p-0" type="button" data-bs-toggle="dropdown"
+                                aria-expanded="false">
+                                <i class="bi bi-three-dots-vertical fs-5"></i>
+                            </button>
+                            <ul class="dropdown-menu dropdown-menu-end shadow border-0">
+                                <li>
+                                    <a class="dropdown-item d-flex align-items-center gap-2" href="#">
+                                        <i class="bi bi-eye"></i> View Details
+                                    </a>
+                                </li>
+                                <li>
+                                    <a class="dropdown-item d-flex align-items-center gap-2" href="#">
+                                        <i class="bi bi-pencil"></i> Edit
+                                    </a>
+                                </li>
+                                <li>
+                                    <hr class="dropdown-divider">
+                                </li>
+                                <li>
+                                    <a class="dropdown-item d-flex align-items-center gap-2 text-danger" href="#">
+                                        <i class="bi bi-trash"></i> Delete
+                                    </a>
+                                </li>
+                            </ul>
+                        </div>
+                    </td>
+                </tr>
+                }
+            </tbody>
+        </table>
+    </div>
+
+    <!-- Pagination -->
+    <div class="d-flex flex-column flex-md-row justify-content-between align-items-center gap-3">
+        <div class="text-muted">
+            Showing {{ startIndex + 1 }} to {{ endIndex }} of {{ tableData.length }} entries
+        </div>
+
+        <nav aria-label="Page navigation">
+            <ul class="pagination mb-0">
+                <li class="page-item" [class.disabled]="currentPage === 1">
+                    <button class="page-link" (click)="goToPage(currentPage - 1)" [disabled]="currentPage === 1"
+                        aria-label="Previous">
+                        Previous
+                    </button>
+                </li>
+
+                @for (page of getPages(); track page) {
+                <li class="page-item" [class.active]="page === currentPage">
+                    <button class="page-link" (click)="goToPage(page)">
+                        {{ page }}
+                    </button>
+                </li>
+                }
+
+                <li class="page-item" [class.disabled]="currentPage === totalPages">
+                    <button class="page-link" (click)="goToPage(currentPage + 1)"
+                        [disabled]="currentPage === totalPages" aria-label="Next">
+                        Next
+                    </button>
+                </li>
+            </ul>
+        </nav>
+    </div>
+</div>
