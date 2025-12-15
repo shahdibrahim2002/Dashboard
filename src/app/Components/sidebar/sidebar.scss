@@ -13,7 +13,6 @@ body {
     justify-content: center;
     
 }
-
 .status-dot {
     width: 3px;
     height: 3px;
@@ -32,8 +31,6 @@ body {
     z-index: 100;
 }
 
-
-
 .gradient-text {
     background: linear-gradient(90deg, #202f2a, #5abfb5bf);
     -webkit-background-clip: text;
@@ -44,7 +41,6 @@ body {
 
 }
 
-/* Menu items */
 .sidebar .list-group-item {
     border: none;
     padding: 10px 14px;
@@ -70,14 +66,13 @@ body {
 .sidebar .list-group-item.active {
     background: linear-gradient(90deg, #202f2a, #5abfb5de);
     color: #fff;
-   
+
 }
 
 .sidebar .list-group-item.active i {
     color: #fff;
 }
 
-/* Section title */
 .menu-section {
     font-size: 11px;
     text-transform: uppercase;

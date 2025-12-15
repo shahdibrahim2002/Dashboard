@@ -4,14 +4,16 @@
       <app-cards></app-cards>
     </div>
   </div>
-  <div class="row g-3 mb-4 align-items-stretch">
+  <div class="row g-3 align-items-stretch">
 
-  <div class="col-xl-8 col-lg-7 col-12">
-  <app-stats-table></app-stats-table>
-</div>
-<div class="col-xl-4 col-lg-4 col-12">
-  <app-wedgets></app-wedgets>
-</div>
+<div class="col-xl-8 col-lg-7 d-flex">
+    <app-stats-table class="flex-fill"></app-stats-table>
+  </div>
+
+  <!-- Widgets -->
+  <div class="col-xl-4 col-lg-5 d-flex">
+    <app-wedgets class="flex-fill"></app-wedgets>
+  </div>
 
   </div>
 
